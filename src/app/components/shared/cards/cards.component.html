@@ -1,0 +1,17 @@
+<div class="row mt-5">
+  <div class="col-md-4 d-flex" *ngFor="let meal of meals$ | async">
+    <div class="card mb-4 flex-fill">
+      <img
+        src="{{ meal.strCategoryThumb }}"
+        class="card-img-top"
+        alt="{{ meal.strCategory }}"
+      />
+      <div class="card-body">
+        <h3>{{ meal.strCategory }}</h3>
+        <p class="card-text">
+          {{ truncateWithEllipsis(meal.strCategoryDescription, 250) }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
